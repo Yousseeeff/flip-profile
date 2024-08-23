@@ -1,0 +1,88 @@
+*{
+  font-family:"Poppins",sans-serif;
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+html,body{
+  display:grid;
+  height: 100%;
+  place-items: center;
+  background:linear-gradient(375deg, #1cc7d0,#2ede98);
+}
+.wr{
+  height: 400px;
+  width:320px;
+  position:relative;
+  transform-style:preserve-3d;
+  perspective: 1000px;
+}
+.wr .card{
+  height:100%;
+  width:100%;
+  position:absolute;
+  background:#fff;
+  border-radius:10px;
+  transform-style:preserve-3d;
+  transform:rotateY(0deg);
+  transition:0.7s cubic-bezier(0.4,0.2,0.2,1);
+  padding:5px;
+}
+.wr:hover > .front-face{
+  transform:rotateY(-180deg);
+}
+.wr .card img{
+  height: 100%;
+  width:100%;
+  object-fit: cover;
+  border-radius:10px;
+}
+.wr .back-face{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-evenly;
+  transform:rotateY(180deg);
+  backface-visibility: hidden;
+}
+.wr:hover > .back-face{
+  transform:rotateY(0deg);
+}
+.wr .back-face img{
+  display:flex;
+  height:200px;
+  width:150px;
+  border-radius: 50%;
+  padding:5px;
+  background:linear-gradient(375deg, #1cc7d0,#2ede98);
+}
+.wr .back-face .info{
+  text-align:center;
+}
+.back-face .info .title{
+  font-size:30px;
+  font-weight:600;
+  margin-bottom:8px;
+}
+.back-face ul{
+  display:flex;
+}
+.back-face ul a{
+  display:block;
+  height:40px;
+  height:40px;
+  background:linear-gradient(375deg, #1cc7d0,#2ede98);
+  text-align: center;
+  border:2px solid transparent;
+  line-height: 38px;
+  padding:0 10px;
+  margin:0 6px;
+  border-radius:50%;
+  color:#fff;
+  font-weight: 700;
+}
+.back-face ul a:hover{
+  background:#fff;
+  color:#1cc7d0;
+  border-color:#1cc7d0;
+}
